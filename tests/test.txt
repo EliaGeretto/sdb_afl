@@ -1,0 +1,9 @@
+key=value
+key
+[]array_key=a,b,c
+[1]array_key
+g='{"foo":1,"bar":{"cow":3}}'
+g:bar.cow
+num_key=1
++num_key
+-num_key
