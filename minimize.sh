@@ -4,6 +4,7 @@ EXECUTABLE=sdb_asan
 MINIMIZED_PATH=minimized
 CRASHES_PATH=findings/crashes
 
+rm -rf $MINIMIZED_PATH
 mkdir -p $MINIMIZED_PATH
 
 echo 'Minimizing crashes...'
@@ -21,9 +22,9 @@ done
 
 echo 'Eliminating duplicates...'
 
-for FIRST in $MINIMIZED_PATH/*
+for FIRST in $MINIMIZED_PATH/id*
 do
-        for SECOND in $MINIMIZED_PATH/*
+        for SECOND in $MINIMIZED_PATH/id*
         do
 		if [ "$FIRST" != "$SECOND" ]
                 then
@@ -45,3 +46,5 @@ for CRASH in $MINIMIZED_PATH/id*
 do
 	./$EXECUTABLE - < $CRASH 2> "$MINIMIZED_PATH/out/$(basename $CRASH).out"
 done
+
+exit 0
