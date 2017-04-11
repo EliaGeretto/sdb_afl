@@ -44,7 +44,7 @@ mkdir -p $MINIMIZED_PATH/out
 echo 'Generating ASAN output...'
 for CRASH in $MINIMIZED_PATH/id*
 do
-	./$EXECUTABLE - < $CRASH 2> "$MINIMIZED_PATH/out/$(basename $CRASH).out"
+	./$EXECUTABLE - < $CRASH 2> "$MINIMIZED_PATH/out/$(basename $CRASH).out" > /dev/null
 done
 
 exit 0
