@@ -1,9 +1,8 @@
 # sdb_afl
 <b><h2>Synopsis</h2></b>
 
-Sdb_afl is a project which its target is to fuzz sdb project and find crashes,
-triggered by bugs. The search for those crashes is performed by fuzzing sdb
-project(link) with afl-fuzz. After finding the crashes, we minimized them and
+Sdb_afl is a project which its target is to fuzz the <a href="https://github.com/radare/sdb">sdb project </a> and find crashes,
+triggered by bugs. The fuzzing is performed with <a href="hhttp://lcamtuf.coredump.cx/afl">afl-fuzz </a> After finding the crashes, we minimized them and
 then we verify that these crashes are not false positives.
 
 <b><h2>Motivation</h2></b>
@@ -48,11 +47,11 @@ some prerequisites before running our scripts.
 
 <b><h2>Instructions for correct running</h2></b>
 
-<p>Initially, in a Linux terminal from inside the directory the command "make" should
+<p>Initially, in a Linux terminal from inside the directory the command `make` should
 be run. If all the required libraries are installed the sdb project, placed in
-the sdb directory, will be compiled with afl-gcc in 32 bits, with a limit of
+the sdb directory, will be compiled with `afl-gcc` in 32 bits, with a limit of
 800MB RAM and with ASAN instrumentation. The successful output of the make is
-the compiled sdb software with name "sdb_asan".
+the compiled sdb software with name `sdb_asan`.
 
 <p>For a fast reproduction of our work, three scripts were built. Each of the three
 scripts is responsible for a different operation. First, the fuzzing.sh should
