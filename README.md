@@ -2,7 +2,7 @@
 <b><h2>Synopsis</h2></b>
 
 Sdb_afl is a project which its target is to fuzz the <a href="https://github.com/radare/sdb">sdb project </a> and find crashes,
-triggered by bugs. The fuzzing is performed with <a href="hhttp://lcamtuf.coredump.cx/afl">afl-fuzz </a> After finding the crashes, we minimized them and
+triggered by bugs. The fuzzing is performed with <a href="http://lcamtuf.coredump.cx/afl">afl-fuzz </a> After finding the crashes, we minimized them and
 then we verify that these crashes are not false positives.
 
 <b><h2>Motivation</h2></b>
@@ -56,7 +56,7 @@ the compiled sdb software with name `sdb_asan`.
 <p>For a fast reproduction of our work, three scripts were built. Each of the three
 scripts is responsible for a different operation. First, the fuzzing.sh should
 be run and the fuzzing will be started. As a test case the afl will choose the
-file inside the test directory. 
+file inside the test directory.
 <i><b>NOTE:</b> afl may ask you to run some extra commands before starting the fuzzing. Just follow afl's instructions.</i>
 <p>When the fuzzing process is terminated (it is suggested after at least 1 cycle)
 the minimize.sh script should be run. This script will minimize the afl findings
