@@ -1,22 +1,23 @@
 # sdb_afl
 Synopsis
 
-Sdb_afl is a project which its target is to fuzz sdb project (https://github.com/radare/sdb) and find crashes,
-triggered by bugs. The search for those crashes is performed by fuzzing with afl-fuzz. After finding the crashes, 
-we minimized them and then we verify that these crashes are not false positives.
+Sdb_afl is a project which its target is to fuzz sdb project and find crashes,
+triggered by bugs. The search for those crashes is performed by fuzzing sdb
+project(link) with afl-fuzz. After finding the crashes, we minimized them and
+then we verify that these crashes are not false positives.
 
 Motivation
 
 The real purpose of the existence of this project is an assignment of the course
 Software Testing and Reverse Engineering for TU Delft. For this assignment, it
-is necessary to discover bugs, with afl, in an open source project and provide patches on them.
+is necessary to fuzz an open source project, to find bugs and patch them.
 
 Installation
 
 One can get sdb-afl easily by just cloning our project. Specifically, in a Linux
 terminal one should run:
 
-git clone --recursive https://github.com/EliaGeretto/sdb_afl.git
+`git clone --recursive https://github.com/EliaGeretto/sdb_afl.git`
 
 After the successful git clone, a directory with name sdb_afl should have been
 placed in the directory that the previous command was run. The directory contains:
@@ -28,21 +29,21 @@ Sdb_afl has been tested in Fedora 25 and Linux Mint 18 both in 64 bit. There are
 some prerequisites before running our scripts.
 
 For Fedora the following repositories are needed:
-1) sudo dnf install afl-fuzz --> installs the afl
-2) sudo dnf install glibc-devel.i686
-3) sudo dnf install libstdc++-devel.i686
-4) sudo dnf install libasan.i686
+1) `sudo dnf install afl-fuzz` --> installs the afl
+2) `sudo dnf install glibc-devel.i686`
+3) `sudo dnf install libstdc++-devel.i686`
+4) `sudo dnf install libasan.i686`
 
 
 For Linux Mint the following Ubuntu repositories are needed:
 
-1) sudo apt-get install afl-fuzz  --> installs the afl
-2) sudo apt-get  install linux-libc-dev:i386
-3) sudo apt-get  install libx32gcc-4.8-dev
-4) sudo apt-get  install libc6-dev-i386
-5) sudo apt-get  install gcc-multilib
-6) sudo apt-get  install g++-multilib
-7) sudo apt-get install libasan2
+1) `sudo apt-get install afl-fuzz`  --> installs the afl
+2) `sudo apt-get  install linux-libc-dev:i386`
+3) `sudo apt-get  install libx32gcc-4.8-dev`
+4) `sudo apt-get  install libc6-dev-i386`
+5) `sudo apt-get  install gcc-multilib`
+6) `sudo apt-get  install g++-multilib`
+7) `sudo apt-get install libasan2`
 
 
 Instructions for correct running
@@ -58,18 +59,15 @@ scripts is responsible for a different operation. First, the fuzzing.sh should
 be run and the fuzzing will be started. As a test case the afl will choose the
 file inside the test directory. NOTE: afl may ask you to run some extra commands
 before starting the fuzzing. Just follow afl's instructions.
-
 When the fuzzing process is terminated (it is suggested after at least 1 cycle)
 the minimize.sh script should be run. This script will minimize the afl findings
 and will delete the duplicates. The minimize script is based on the "afl-tmin"
 command. All the minimized crashes will be saved in a new directory called
-minimized. 
-
-Finally, the verify.sh script should be run in order to validate that
+minimized. Finally, the verify.sh script should be run in order to validate that
 the minimized crashes found are not false positives. All scripts should be run
 inside the directory sdb-afl with the following command:
 
-./script_name
+`./script_name`
 
 Contributors
 
