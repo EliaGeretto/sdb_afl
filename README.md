@@ -27,14 +27,14 @@ placed in the directory that the previous command was run. The directory contain
 Sdb_afl has been tested in Fedora 25 and Linux Mint 18 both in 64 bit. There are
 some prerequisites before running our scripts.
 
-<i>For Fedora the following repositories are needed: </i>
+<i>For Fedora the following packages are needed: </i>
 
 1) `sudo dnf install afl-fuzz` --> installs the afl
 2) `sudo dnf install glibc-devel.i686`
 3) `sudo dnf install libstdc++-devel.i686`
 4) `sudo dnf install libasan.i686`
 
-<i>For Linux Mint the following Ubuntu repositories are needed:</i>
+<i>For Linux Mint the following Ubuntu packages are needed:</i>
 
 1) `sudo apt-get install afl-fuzz`  --> installs the afl
 2) `sudo apt-get  install linux-libc-dev:i386`
@@ -47,15 +47,11 @@ some prerequisites before running our scripts.
 
 <b><h2>Instructions for correct running</h2></b>
 
-<p>Initially, in a Linux terminal from inside the directory the command "make" should
-be run. If all the required libraries are installed the sdb project, placed in
-the sdb directory, will be compiled with afl-gcc in 32 bits, with a limit of
-800MB RAM and with ASAN instrumentation. The successful output of the make is
-the compiled sdb software with name sdb_asan.
-
 <p>For a fast reproduction of our work, three scripts were built. Each of the three
 scripts is responsible for a different operation. First, the fuzzing.sh should
-be run and the fuzzing will be started. As a test case the afl will choose the
+be run. If all the required libraries are installed the sdb project, placed in
+the sdb directory, will be compiled with afl-gcc in 32 bits, with a limit of
+800MB RAM and with ASAN instrumentation.Then the fuzzing will be started. As a test case the afl will choose the
 file inside the test directory.
 <i><b>NOTE:</b> afl may ask you to run some extra commands before starting the fuzzing. Just follow afl's instructions.</i>
 <p>When the fuzzing process is terminated (it is suggested after at least 1 cycle)
