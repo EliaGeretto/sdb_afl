@@ -51,7 +51,7 @@ limit of 800 MB. As a test case AFL will choose the file inside the tests
 directory.
 
 ***NOTE:*** _AFL may ask you to run some extra commands before
-starting the fuzzing. Just follow the instructions provided_
+starting the fuzzing. Just follow the instructions provided._
 
 When the fuzzing process is terminated (it is suggested to stop it after at
 least 1 cycle) the `minimize.sh` script should be run. This script will minimize
