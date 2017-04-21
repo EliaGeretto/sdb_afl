@@ -17,9 +17,10 @@ One can get sdb-afl easily by just cloning our project. Specifically, in a Linux
 `git clone --recursive https://github.com/EliaGeretto/sdb_afl.git`
 
 After the successful git clone, a directory with name sdb_afl should have been placed in the directory that the previous command was run. The directory contains:  
-3 scripts: fuzz.sh, minimize.sh and verify.sh  
-2 directories: sdb and tests  
-1 make file  
+
+* 3 scripts: fuzz.sh, minimize.sh and verify.sh  
+* 2 directories: sdb and tests  
+* 1 make file  
 
 Sdb_afl has been tested in Fedora 25 and Linux Mint 18 both in 64 bit. There are some prerequisites before running our scripts.
 
