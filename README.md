@@ -22,21 +22,23 @@ After the successful git clone, a directory with name sdb_afl should have been p
 1 make file  
 
 Sdb_afl has been tested in Fedora 25 and Linux Mint 18 both in 64 bit. There are some prerequisites before running our scripts.
+
 _For Fedora the following packages are needed:_
 
-*`sudo dnf install afl-fuzz` --> installs the afl 
-*`sudo dnf install glibc-devel.i686` 
-*`sudo dnf install libstdc++-devel.i686` 
-*`sudo dnf install libasan.i686`
+* `sudo dnf install afl-fuzz` --> installs the afl 
+* `sudo dnf install glibc-devel.i686` 
+* `sudo dnf install libstdc++-devel.i686` 
+* `sudo dnf install libasan.i686`
 
 _For Linux Mint the following Ubuntu packages are needed:_
-`sudo apt-get install afl-fuzz` --> installs the afl
-`sudo apt-get install linux-libc-dev:i386`
-`sudo apt-get install libx32gcc-4.8-dev`
-`sudo apt-get install libc6-dev-i386`
-`sudo apt-get install gcc-multilib`
-`sudo apt-get install g++-multilib`
-`sudo apt-get install libasan2`
+
+* `sudo apt-get install afl-fuzz` --> installs the afl
+* `sudo apt-get install linux-libc-dev:i386`
+* `sudo apt-get install libx32gcc-4.8-dev`
+* `sudo apt-get install libc6-dev-i386`
+* `sudo apt-get install gcc-multilib`
+* `sudo apt-get install g++-multilib`
+* `sudo apt-get install libasan2`
 
 Instructions for correct running
 --------------------------------
