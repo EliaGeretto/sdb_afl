@@ -10,7 +10,7 @@ The real purpose of the existence of this project is an assignment of the course
 
 ## Installation
 
-One can get sdb-afl easily by just cloning our project. Specifically, in a Linux terminal one should run: 
+One can get sdb-afl easily by just cloning our project. Specifically, in a Linux terminal one should run:
 
 `git clone --recursive https://github.com/EliaGeretto/sdb_afl.git`
 
@@ -20,32 +20,32 @@ After the successful git clone, a directory with name sdb_afl should have been p
 1 make file  
 
 Sdb_afl has been tested in Fedora 25 and Linux Mint 18 both in 64 bit. There are some prerequisites before running our scripts.
-_For Fedora the following packages are needed:_ 
-1) `sudo dnf install afl-fuzz` --> installs the afl 
-2) `sudo dnf install glibc-devel.i686` 
-3) `sudo dnf install libstdc++-devel.i686` 
-4) `sudo dnf install libasan.i686` 
+_For Fedora the following packages are needed:_
+1) `sudo dnf install afl-fuzz` --> installs the afl
+2) `sudo dnf install glibc-devel.i686`
+3) `sudo dnf install libstdc++-devel.i686`
+4) `sudo dnf install libasan.i686`
 
-_For Linux Mint the following Ubuntu packages are needed:_ 
-1) `sudo apt-get install afl-fuzz` --> installs the afl 
-2) `sudo apt-get install linux-libc-dev:i386` 
-3) `sudo apt-get install libx32gcc-4.8-dev` 
-4) `sudo apt-get install libc6-dev-i386` 
-5) `sudo apt-get install gcc-multilib` 
-6) `sudo apt-get install g++-multilib` 
+_For Linux Mint the following Ubuntu packages are needed:_
+1) `sudo apt-get install afl-fuzz` --> installs the afl
+2) `sudo apt-get install linux-libc-dev:i386`
+3) `sudo apt-get install libx32gcc-4.8-dev`
+4) `sudo apt-get install libc6-dev-i386`
+5) `sudo apt-get install gcc-multilib`
+6) `sudo apt-get install g++-multilib`
 7) `sudo apt-get install libasan2`
 
-## **Instructions for correct running**
+## Instructions for correct running
 
-For a fast reproduction of our work, three scripts were built. Each of the three scripts is responsible for a different operation. First, the fuzzing.sh should be run. If all the required libraries are installed the sdb project, placed in the sdb directory, will be compiled with afl-gcc in 32 bits, with a limit of 800MB RAM and with ASAN instrumentation.Then the fuzzing will be started. As a test case the afl will choose the file inside the test directory. 
+For a fast reproduction of our work, three scripts were built. Each of the three scripts is responsible for a different operation. First, the fuzzing.sh should be run. If all the required libraries are installed the sdb project, placed in the sdb directory, will be compiled with afl-gcc in 32 bits, with a limit of 800MB RAM and with ASAN instrumentation.Then the fuzzing will be started. As a test case the afl will choose the file inside the test directory.
 _**NOTE:** afl may ask you to run some extra commands before starting the fuzzing. Just follow afl's instructions._
 
-When the fuzzing process is terminated (it is suggested after at least 1 cycle) the minimize.sh script should be run. This script will minimize the afl findings and will delete the duplicates. The minimize script is based on the "afl-tmin" command. All the minimized crashes will be saved in a new directory called minimized. Finally, the verify.sh script should be run in order to validate that the minimized crashes found are not false positives. 
+When the fuzzing process is terminated (it is suggested after at least 1 cycle) the minimize.sh script should be run. This script will minimize the afl findings and will delete the duplicates. The minimize script is based on the "afl-tmin" command. All the minimized crashes will be saved in a new directory called minimized. Finally, the verify.sh script should be run in order to validate that the minimized crashes found are not false positives.
 
-All scripts should be run inside the directory sdb-afl with the following command: 
+All scripts should be run inside the directory sdb-afl with the following command:
 
 `./script_name`
 
-## **Contributors**
+## Contributors
 
 [EliaGeretto](https://github.com/EliaGeretto), [Djack1010](https://github.com/Djack1010), [atoptsoglou](https://github.com/atoptsoglou)
