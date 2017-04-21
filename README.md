@@ -25,20 +25,20 @@ Linux terminal one should run:
 After the successful cloning of the repository, a directory with name `sdb_afl`
 should have been created. The directory contains:
 
-* Three scripts: fuzz.sh, minimize.sh and verify.sh
-* Two directories: sdb and tests
-* One Makefile
+* Three scripts: `fuzz.sh`, `minimize.sh` and `verify.sh`
+* Two directories: `sdb` and `tests`
+* A Makefile
 
 SDB\_AFL has been tested in Fedora 25 and Linux Mint 18 both in 64 bit. There
 are some prerequisites before running our scripts.
 
 _For Fedora the following packages are needed:_
 
-	$ sudo dnf install afl-fuzz glibc-devel.i686 libstdc++-devel.i686 libasan.i686
+	sudo dnf install afl-fuzz glibc-devel.i686 libstdc++-devel.i686 libasan.i686
 
 _For Linux Mint the following Ubuntu packages are needed:_
 
-	$ sudo apt-get install afl-fuzz linux-libc-dev:i386 libx32gcc-4.8-dev libc6-dev-i386 gcc-multilibg++-multilib libasan2
+	sudo apt-get install afl-fuzz linux-libc-dev:i386 libx32gcc-4.8-dev libc6-dev-i386 gcc-multilibg++-multilib libasan2
 
 Instructions for correct running
 --------------------------------
